@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newi - Internet de Fibra de Alta Velocidad en Córdoba</title>
+    <meta name="description" content="Newi te ofrece la mejor conexión a internet de fibra para tu comunidad y negocio. Planes de alta velocidad y una instalación económica. ¡Conéctate en Córdoba!">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #007bff;
+            --secondary-blue: #00bcd4;
+            --light-green: #20c997;
+            --text-color: #333;
+            --bg-light: #f8f9fa;
+        }
+
+        /* Base & Resets */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 45px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out 0.5s forwards;
+        }
+
+        .btn {
+            background-color: var(--light-green);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 32, 255, 0.2);
+        }
+
+        .btn:hover {
+            background-color: #17a2b8;
+            transform: translateY(-2px);
+        }
+
+        /* Sección 'Por Qué Elegirnos' */
+        .features {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: var(--primary-blue);
+        }
+        
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .feature-card .icon {
+            font-size: 3em;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        /* Planes Section */
+        .planes {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--bg-light);
+        }
+
+        .planes h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: var(--primary-blue);
+        }
+
+        .plan-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .plan-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .plan-card.highlight {
+            border: 3px solid var(--light-green);
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(32, 201, 151, 0.3);
+        }
+
+        .plan-card h3 {
+            font-size: 2em;
+            color: var(--secondary-blue);
+            margin-bottom: 15px;
+        }
+
+        .plan-card .price {
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+        
+        .plan-card .price small {
+            font-size: 0.5em;
+            font-weight: 400;
+            color: #666;
+        }
+        
+        .plan-card .install-info {
+            font-size: 1em;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .plan-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .plan-card ul li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .plan-card ul li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--light-green);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: var(--primary-blue);
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact form input,
+        .contact form textarea {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact form input:focus,
+        .contact form textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--text-color);
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: var(--light-green);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 15px;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+            .planes h2, .contact h2, .features h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="src/newi.png" alt="Newi Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#planes">Planes</a></li>
+                    <li><a href="#tecnologia">Tecnología</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="https://newi.uisp.com/crm/login" class="btn-account">Mi Cuenta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Internet de Fibra de Alta Velocidad para tu Comunidad</h1>
+                <p>Experimenta la conexión más rápida y confiable en Córdoba con una instalación económica. ¡Di adiós a los cortes y a la baja velocidad!</p>
+                <a href="#planes" class="btn">Ver Planes</a>
+            </div>
+        </section>
+
+        <section id="tecnologia" class="features">
+            <div class="container">
+                <h2>¿Por qué elegir a Newi?</h2>
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <span class="icon"><i class="fas fa-wifi"></i></span>
+                        <h3>Tecnología Híbrida de Vanguardia</h3>
+                        <p>Combinamos radio de 60 GHz para una conexión troncal de alta velocidad con fibra óptica hasta tu hogar o negocio para una máxima estabilidad. Lo mejor de ambos mundos.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="icon"><i class="fas fa-dollar-sign"></i></span>
+                        <h3>Instalación a un precio increíble</h3>
+                        <p>Te conectamos a un precio increíble de $30,000 ARS. ¡Olvídate de las instalaciones costosas y empieza a disfrutar hoy mismo!</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <h3>Velocidad Real, Siempre</h3>
+                        <p>Nuestra red está diseñada para evitar la congestión. Disfruta de la velocidad prometida sin interrupciones, incluso en horas pico.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="planes" class="planes">
+            <div class="container">
+                <h2>Nuestros Planes de Internet</h2>
+                <div class="plan-cards">
+                    <div class="plan-card">
+                        <h3>Plan 100 Megas</h3>
+                        <p class="price">$20,000 ARS <small>/ mes</small></p>
+                        <p class="install-info">Instalación: $30,000 ARS</p>
+                        <ul>
+                            <li>✔️ Velocidad de descarga: 100 Mbps</li>
+                            <li>✔️ Ideal para navegar y streaming en HD.</li>
+                            <li>✔️ 1 ONT Wi-Fi 6 incluido</li>
+                        </ul>
+                        <a href="#contacto" class="btn">Lo Quiero</a>
+                    </div>
+                    <div class="plan-card highlight">
+                        <h3>Plan 300 Megas</h3>
+                        <p class="price">$26,000 ARS <small>/ mes</small></p>
+                        <p class="install-info">Instalación: $30,000 ARS</p>
+                        <ul>
+                            <li>✔️ Velocidad de descarga: 300 Mbps</li>
+                            <li>✔️ Perfecto para teletrabajo, gaming y videollamadas.</li>
+                            <li>✔️ Soporte técnico prioritario</li>
+                        </ul>
+                        <a href="#contacto" class="btn">Lo Quiero</a>
+                    </div>
+                    <div class="plan-card">
+                        <h3>Plan 500 Megas</h3>
+                        <p class="price">$32,000 ARS <small>/ mes</small></p>
+                        <p class="install-info">Instalación: $30,000 ARS</p>
+                        <ul>
+                            <li>✔️ Velocidad de descarga: 500 Mbps</li>
+                            <li>✔️ La mejor experiencia para múltiples usuarios, streaming en 4K.</li>
+                            <li>✔️ Asesoría personalizada</li>
+                        </ul>
+                        <a href="#contacto" class="btn">Lo Quiero</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contacto" class="contact">
+            <div class="container">
+                <h2>Contáctanos y Conéctate</h2>
+                <form action="#" method="POST">
+                    <input type="text" name="name" placeholder="Tu Nombre Completo" required>
+                    <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
+                    <input type="tel" name="phone" placeholder="Tu Teléfono (opcional)">
+                    <input type="text" name="address" placeholder="Dirección del Edificio" required>
+                    <textarea name="message" placeholder="Tu Mensaje (ej. ¿Qué plan te interesa?)" rows="5"></textarea>
+                    <button type="submit" class="btn">Enviar Solicitud</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Newi. Todos los derechos reservados. | <a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a></p>
+        </div>
+    </footer>
+</body>
+</html>
