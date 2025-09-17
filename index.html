@@ -167,6 +167,80 @@
             margin-bottom: 10px;
         }
 
+        /* Verificador de Cobertura Rápida */
+        .checker-bar {
+            background-color: var(--light-green);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .checker-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .checker-content h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .checker-content p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .checker-content form {
+            display: flex;
+            max-width: 600px;
+            width: 100%;
+            gap: 10px;
+        }
+
+        .checker-content input[type="text"] {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            flex-grow: 1;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .btn-check {
+            background-color: var(--primary-blue);
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-check:hover {
+            background-color: #0056b3;
+        }
+
+        /* Sección de Cobertura (Mapa) */
+        .coverage {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .coverage h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: var(--primary-blue);
+        }
+
+        .coverage img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
         /* Planes Section */
         .planes {
             padding: 80px 0;
@@ -331,8 +405,15 @@
             .hero p {
                 font-size: 1.2em;
             }
-            .planes h2, .contact h2, .features h2 {
+            .planes h2, .contact h2, .features h2, .coverage h2 {
                 font-size: 2em;
+            }
+            .checker-content form {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .checker-content input[type="text"], .btn-check {
+                width: 100%;
             }
         }
     </style>
@@ -342,14 +423,15 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="src/isologo newi.png" alt="Newi Logo">
+                <img src="src/newi.png" alt="Newi Logo">
             </div>
             <nav>
                 <ul>
                     <li><a href="#planes">Planes</a></li>
+                    <li><a href="#cobertura">Cobertura</a></li>
                     <li><a href="#tecnologia">Tecnología</a></li>
                     <li><a href="#contacto">Contacto</a></li>
-                    <li><a href="https://newi.uisp.com/crm" class="btn-account">Mi Cuenta</a></li>
+                    <li><a href="http://192.168.10.229/cliente/" class="btn-account">Mi Cuenta</a></li>
                 </ul>
             </nav>
         </div>
@@ -361,6 +443,19 @@
                 <h1>Internet de Fibra de Alta Velocidad para tu Comunidad</h1>
                 <p>Experimenta la conexión más rápida y confiable en Córdoba con una instalación económica. ¡Di adiós a los cortes y a la baja velocidad!</p>
                 <a href="#planes" class="btn">Ver Planes</a>
+            </div>
+        </section>
+        
+        <section class="checker-bar">
+            <div class="container">
+                <div class="checker-content">
+                    <h3>¡Verifica si tu hogar está listo para Newi!</h3>
+                    <p>Ingresa la dirección de tu hogar o negocio para confirmar nuestra cobertura de fibra híbrida.</p>
+                    <form action="#contacto" method="GET">
+                        <input type="text" name="address_check" placeholder="Ej: Obispo Trejo 1268" required>
+                        <button type="submit" class="btn-check">Verificar</button>
+                    </form>
+                </div>
             </div>
         </section>
 
@@ -384,6 +479,14 @@
                         <p>Nuestra red está diseñada para evitar la congestión. Disfruta de la velocidad prometida sin interrupciones, incluso en horas pico.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="cobertura" class="coverage">
+            <div class="container">
+                <h2>Nuestra Zona de Cobertura en Córdoba</h2>
+                <p>Estamos enfocados en las áreas de mayor densidad para ofrecer la mejor estabilidad y rendimiento.</p>
+                <img src="src/mapa-cordoba-newi.png" alt="Mapa de Cobertura de Newi en la Ciudad de Córdoba">
             </div>
         </section>
 
@@ -449,4 +552,4 @@
         </div>
     </footer>
 </body>
-</html>                  m
+</html>
