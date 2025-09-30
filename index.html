@@ -234,12 +234,19 @@
             color: var(--primary-blue);
         }
 
-        .coverage img {
+        .coverage p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        .coverage .map-container img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px; 
         }
+
 
         /* Planes Section - General */
         .planes-section {
@@ -328,7 +335,7 @@
         
         /* Sección Específica para Planes de Negocios */
         .negocios {
-            background-color: #333; /* Fondo oscuro para diferenciar */
+            background-color: #333; 
             color: #fff;
         }
         
@@ -505,9 +512,12 @@
 
         <section id="cobertura" class="coverage">
             <div class="container">
-                <h2>Nuestra Zona de Cobertura en Córdoba</h2>
-                <p>Estamos enfocados en las áreas de mayor densidad para ofrecer la mejor estabilidad y rendimiento.</p>
-                <img src="assets/mapa-cordoba-newi.png" alt="Mapa de Cobertura de Newi en la Ciudad de Córdoba">
+                <h2>Nuestra Zona de Cobertura</h2>
+                <p>Newi se expande en las áreas de mayor crecimiento y densidad de Córdoba y alrededores para ofrecerte la mejor conectividad.</p>
+                <div class="map-container">
+                    <img src="assets/mapa-cordoba-newi.png" alt="Mapa de Cobertura de Newi en la Ciudad de Córdoba">
+                    <img src="assets/Cobertura-Newi-JP.png" alt="Mapa de Cobertura de Newi en zonas adyacentes a Córdoba">
+                </div>
             </div>
         </section>
 
@@ -605,7 +615,3 @@
     </footer>
 </body>
 </html>
-
-
-
-
