@@ -241,14 +241,13 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
-        /* Planes Section */
-        .planes {
+        /* Planes Section - General */
+        .planes-section {
             padding: 80px 0;
             text-align: center;
-            background-color: var(--bg-light);
         }
 
-        .planes h2 {
+        .planes-section h2 {
             font-size: 2.5em;
             margin-bottom: 50px;
             color: var(--primary-blue);
@@ -272,7 +271,7 @@
         .plan-card:hover {
             transform: translateY(-5px);
         }
-
+        
         .plan-card.highlight {
             border: 3px solid var(--light-green);
             transform: scale(1.05);
@@ -327,6 +326,30 @@
             color: var(--light-green);
         }
         
+        /* Sección Específica para Planes de Negocios */
+        .negocios {
+            background-color: #333; /* Fondo oscuro para diferenciar */
+            color: #fff;
+        }
+        
+        .negocios .plan-card {
+            background-color: #444;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+        
+        .negocios .plan-card h3 {
+            color: var(--light-green);
+        }
+        
+        .negocios .plan-card .price {
+            color: var(--secondary-blue);
+        }
+        
+        .negocios .plan-card ul li::before {
+            color: var(--secondary-blue);
+        }
+
         /* Contact Section */
         .contact {
             padding: 80px 0;
@@ -382,13 +405,12 @@
             text-decoration: underline;
         }
 
-        /* Animaciones */
+        /* Animaciones y Responsive */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             header .container {
                 flex-direction: column;
@@ -402,18 +424,12 @@
             .hero h1 {
                 font-size: 2.5em;
             }
-            .hero p {
-                font-size: 1.2em;
-            }
-            .planes h2, .contact h2, .features h2, .coverage h2 {
+            .planes-section h2, .contact h2, .features h2, .coverage h2 {
                 font-size: 2em;
             }
             .checker-content form {
                 flex-direction: column;
                 gap: 15px;
-            }
-            .checker-content input[type="text"], .btn-check {
-                width: 100%;
             }
         }
     </style>
@@ -423,15 +439,15 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="assets/isologo-newi.png" alt="Newi Logo">
+                <img src="src/isologo newi.png" alt="Newi Logo">
             </div>
             <nav>
                 <ul>
-                    <li><a href="#planes">Planes</a></li>
+                    <li><a href="#planes-hogar">Hogar</a></li>
+                    <li><a href="#planes-negocios">Negocios</a></li>
                     <li><a href="#cobertura">Cobertura</a></li>
-                    <li><a href="#tecnologia">Tecnología</a></li>
                     <li><a href="#contacto">Contacto</a></li>
-                    <li><a href="http://https://newi.uisp.com/crm/login" class="btn-account">Mi Cuenta</a></li>
+                    <li><a href="https://newi.uisp.com/crm" class="btn-account">Mi Cuenta</a></li>
                 </ul>
             </nav>
         </div>
@@ -442,15 +458,15 @@
             <div class="container">
                 <h1>Internet de Fibra de Alta Velocidad para tu Comunidad</h1>
                 <p>Experimenta la conexión más rápida y confiable en Córdoba con una instalación económica. ¡Di adiós a los cortes y a la baja velocidad!</p>
-                <a href="#planes" class="btn">Ver Planes</a>
+                <a href="#planes-hogar" class="btn">Ver Planes</a>
             </div>
         </section>
         
         <section class="checker-bar">
             <div class="container">
                 <div class="checker-content">
-                    <h3>¡Verifica si tu hogar está listo para Newi!</h3>
-                    <p>Ingresa la dirección de tu hogar o negocio para confirmar nuestra cobertura de fibra híbrida.</p>
+                    <h3>¡Verifica si tu hogar o negocio está listo para Newi!</h3>
+                    <p>Ingresa la dirección para confirmar nuestra cobertura de fibra híbrida.</p>
                     <form action="#contacto" method="GET">
                         <input type="text" name="address_check" placeholder="Ej: Obispo Trejo 1268" required>
                         <button type="submit" class="btn-check">Verificar</button>
@@ -464,19 +480,24 @@
                 <h2>¿Por qué elegir a Newi?</h2>
                 <div class="feature-cards">
                     <div class="feature-card">
+                        <span class="icon"><i class="fas fa-handshake"></i></span>
+                        <h3>Soporte Empresarial Garantizado</h3>
+                        <p>Planes diseñados con SLA (Acuerdo de Nivel de Servicio) y prioridad en la atención. **Crítico para tu negocio.**</p>
+                    </div>
+                    <div class="feature-card">
                         <span class="icon"><i class="fas fa-wifi"></i></span>
                         <h3>Tecnología Híbrida de Vanguardia</h3>
-                        <p>Combinamos radio de 60 GHz para una conexión troncal de alta velocidad con fibra óptica hasta tu hogar o negocio para una máxima estabilidad. Lo mejor de ambos mundos.</p>
+                        <p>Combinamos radio de 60 GHz para la troncal y fibra óptica hasta tu punto de conexión para una máxima estabilidad.</p>
                     </div>
                     <div class="feature-card">
                         <span class="icon"><i class="fas fa-dollar-sign"></i></span>
                         <h3>Instalación a un precio increíble</h3>
-                        <p>Te conectamos a un precio increíble de **$30,000 ARS**. ¡Olvídate de las instalaciones costosas y empieza a disfrutar hoy mismo!</p>
+                        <p>Te conectamos por solo **$30,000 ARS**. Olvídate de las instalaciones costosas y empieza a disfrutar hoy mismo.</p>
                     </div>
                     <div class="feature-card">
                         <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
                         <h3>Velocidad Real, Siempre</h3>
-                        <p>Nuestra red está diseñada para evitar la congestión. Disfruta de la velocidad prometida sin interrupciones, incluso en horas pico.</p>
+                        <p>Red diseñada para evitar la congestión. Disfruta de la velocidad prometida sin interrupciones, incluso en horas pico.</p>
                     </div>
                 </div>
             </div>
@@ -486,13 +507,13 @@
             <div class="container">
                 <h2>Nuestra Zona de Cobertura en Córdoba</h2>
                 <p>Estamos enfocados en las áreas de mayor densidad para ofrecer la mejor estabilidad y rendimiento.</p>
-                <img src="assets/mapa-cordoba-newi.png" alt="Mapa de Cobertura de Newi en la Ciudad de Córdoba">
+                <img src="src/mapa-cordoba-newi.png" alt="Mapa de Cobertura de Newi en la Ciudad de Córdoba">
             </div>
         </section>
 
-        <section id="planes" class="planes">
+        <section id="planes-hogar" class="planes-section" style="background-color: var(--bg-light);">
             <div class="container">
-                <h2>Nuestros Planes de Internet</h2>
+                <h2>Planes Residenciales (Hogar)</h2>
                 <div class="plan-cards">
                     <div class="plan-card">
                         <h3>Plan 100 Megas</h3>
@@ -511,7 +532,7 @@
                         <p class="install-info">Instalación: $30,000 ARS</p>
                         <ul>
                             <li>✔️ Velocidad de descarga: 300 Mbps</li>
-                            <li>✔️ Perfecto para teletrabajo, gaming y videollamadas.</li>
+                            <li>✔️ Perfecto para teletrabajo y gaming.</li>
                             <li>✔️ Soporte técnico prioritario</li>
                         </ul>
                         <a href="#contacto" class="btn">Lo Quiero</a>
@@ -522,7 +543,7 @@
                         <p class="install-info">Instalación: $30,000 ARS</p>
                         <ul>
                             <li>✔️ Velocidad de descarga: 500 Mbps</li>
-                            <li>✔️ La mejor experiencia para múltiples usuarios, streaming en 4K.</li>
+                            <li>✔️ La mejor experiencia para múltiples usuarios y 4K.</li>
                             <li>✔️ Asesoría personalizada</li>
                         </ul>
                         <a href="#contacto" class="btn">Lo Quiero</a>
@@ -531,14 +552,45 @@
             </div>
         </section>
         
+        <section id="planes-negocios" class="planes-section negocios">
+            <div class="container">
+                <h2>Planes Corporativos (Negocios)</h2>
+                <p>Velocidad simétrica y soporte con SLA para la máxima continuidad operativa.</p>
+                <div class="plan-cards">
+                    <div class="plan-card">
+                        <h3>100/100 Simétricos</h3>
+                        <p class="price">$38,000 ARS <small>/ mes</small></p>
+                        <p class="install-info">Instalación a convenir. ¡Contáctanos!</p>
+                        <ul>
+                            <li>✔️ Velocidad de subida y bajada: 100 Mbps</li>
+                            <li>✔️ **Dirección IP Fija**</li>
+                            <li>✔️ Garantía de Uptime (SLA)</li>
+                        </ul>
+                        <a href="#contacto" class="btn">Contratar</a>
+                    </div>
+                    <div class="plan-card highlight">
+                        <h3>500/500 Simétricos</h3>
+                        <p class="price">$70,000 ARS <small>/ mes</small></p>
+                        <p class="install-info">Instalación a convenir. ¡Contáctanos!</p>
+                        <ul>
+                            <li>✔️ Velocidad de subida y bajada: 500 Mbps</li>
+                            <li>✔️ **Dirección IP Fija**</li>
+                            <li>✔️ Soporte Empresarial 24/7</li>
+                        </ul>
+                        <a href="#contacto" class="btn">Contratar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="contacto" class="contact">
             <div class="container">
                 <h2>Contáctanos y Conéctate</h2>
-                <form action="https://formspree.io/f/mandglde" method="POST">
+                <form action="URL_DE_TU_FORMULARIO_FORMSPREE" method="POST">
                     <input type="text" name="name" placeholder="Tu Nombre Completo" required>
                     <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
                     <input type="tel" name="phone" placeholder="Tu Teléfono (opcional)">
-                    <input type="text" name="address" placeholder="Dirección del Edificio" required>
+                    <input type="text" name="address" placeholder="Dirección del Edificio o Negocio" required>
                     <textarea name="message" placeholder="Tu Mensaje (ej. ¿Qué plan te interesa?)" rows="5"></textarea>
                     <button type="submit" class="btn">Enviar Solicitud</button>
                 </form>
@@ -553,7 +605,3 @@
     </footer>
 </body>
 </html>
-
-
-
-
